@@ -1,4 +1,6 @@
 ---
-title: ' repository'
-date: 2020-08-11 10:40:39
+title: Repositories
+layout: repository
+comments: false
+sidebar: none
 ---

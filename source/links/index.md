@@ -1,4 +1,6 @@
 ---
-title: links
-date: 2020-08-11 10:40:55
+title: 友情链接
+layout: links
+comments: true
+sidebar: none
 ---
