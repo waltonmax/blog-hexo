@@ -104,7 +104,7 @@ theme: pure
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/waltonmax/waltonmax.github.io.git
+  repo: git@github.com:waltonmax/waltonmax.github.io.git
   branch: [master]
 
 ## feed   
