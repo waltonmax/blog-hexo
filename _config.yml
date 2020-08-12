@@ -120,3 +120,20 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+#https://github.com/alexbruno/hexo-generator-json-content
+# exemple
+jsonContent:
+  ignore:
+    paths:
+      - 404.html
+      - books
+      - repository
+      - links
+    tags:
+      - tag1
+      - tag2
+
+
+
+  
