@@ -5,31 +5,31 @@ toc: true
 date: 2020-08-12 17:33:20
 tags:
 ---
-### 安装 
+#### 安装 
 
 ``` bash
 $ npm install -g hexo-cli
 ```
 
 
-### 初始化
+#### 初始化
 
 ``` bash
 $ hexo init
 ```
 
-### 生成静态文件
+#### 生成静态文件
 
 ``` bash
 $ hexo g
 ```
 
-### 启动本地服务
+#### 启动本地服务
 
 ``` bash
 $ hexo s
 ```
-### 发布
+#### 发布
 
 ``` bash
 $ hexo d
