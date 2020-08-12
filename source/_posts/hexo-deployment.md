@@ -3,38 +3,22 @@ title: hexo 部署
 comments: false
 toc: true
 date: 2020-08-12 17:33:20
+categories:
+  - 前端
 tags:
+  - hexo
 ---
-#### 安装 
+
+##### 部署
 
 ``` bash
-$ npm install -g hexo-cli
+$ npm install -g hexo-cli #安装
+$ hexo init               #初始化
+$ hexo g                  #生成
+$ hexo s                  #启动本地服务
+$ hexo d                  #发布
 ```
-
-
-#### 初始化
-
-``` bash
-$ hexo init
-```
-
-#### 生成静态文件
-
-``` bash
-$ hexo g
-```
-
-#### 启动本地服务
-
-``` bash
-$ hexo s
-```
-#### 发布
-
-``` bash
-$ hexo d
-```
-### 常用命令
+#### 常用命令
 
 ``` bash
 $ hexo new "postName" #新建文章

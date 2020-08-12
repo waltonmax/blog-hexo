@@ -1,7 +1,10 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
 comments: false
 toc: true
+categories:
+  - liux
+tags:
+  - liux
 ---
