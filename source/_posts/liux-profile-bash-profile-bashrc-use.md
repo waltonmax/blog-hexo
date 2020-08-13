@@ -1,5 +1,5 @@
 ---
-title: liux中profile、bash_profile、bashrc作用与区别
+title: liux中profile、bashrc、bash_profile作用与区别
 comments: false
 toc: true
 date: 2020-08-12 20:31:41
@@ -9,49 +9,21 @@ tags:
   - liux
 ---
 
-###  profile 文件
+ `/etc/profile`，`/etc/bashrc` 是系统全局环境变量设定
+  `~/.profile`，`~/.bashrc`用户家目录下的私有环境变量设定
 
-1. #### `profile`文件的作用
+  当登入系统时候获得一个`shell`进程时，其读取环境设定档有三步:
 
-   `profile`（`/etc/profile`），用于设置系统级的环境变量和启动程序，在这个文件下配置会对**所有用户**生效。当用户登录（`login`）时，文件会被执行，并从`/etc/profile.d`目录的配置文件中查找`shell`设置。
+ - 首先读入的是全局环境变量设定档`/etc/profile`，然后根据其内容读取额外的设定的文档，如`/etc/profile.d`和`/etc/inputrc`
 
-2. #### 在`profile`中添加环境变量
+ - 然后根据不同使用者帐号，去读取`~/.bash_profile`，如果这读取不了就读取`~/.bash_login`，这个也读取不了才会读取`~/.profile`，这三个文档设定基本上是一样的, 读取有优先关系.
 
-   一般不建议在`/etc/profile`文件中添加环境变量，因为在这个文件中添加的设置会对所有用户起作用。当需要添加时，我们可以按以方式添加：
+ - 然后在根据用户帐号读取`~/.bashrc`
 
-   如，添加一个`HOST`值为`itbilu.com`的环境变量：
+ 至于`~/.profile`与`~/.bashrc`,它们都具有个性化定制功能.
 
-   ```
-   export HOST=itbilu.com
-   ```
-
-   添加时，可以在行尾使用`;`号，也可以不使用。一个变量名可以对应多个变量值，多个变量值使用`:`分隔。
-
-   添加环境变量后，需要重新登录才能生效，也可以使用`source`命令强制立即生效：
-
-   ```
-   source /etc/profile
-   ```
-
-   查看是否生效可以使用`echo`命令：
-
-   ```
-   $ echo $HOST
-   itbilu.com
-   ```
+ `~/.profile`可以设定本用户专有的路径，环境变量，等，它只能登入的时候执行一次. `~/.bashrc`也是某用户专有设定文档，可以设定路径，命令别名，每次`shell script`的执行都会使用它一次
 
 
-
-### `bashrc`文件
-
-这个文件用于配置函数或别名。`bashrc`文件有两种级别：系统级的位于`/etc/bashrc`、用户级的`~/.bashrc`，两者分别会对所有用户和当前用户生效。
-
-`bashrc`文件只会对指定的`shell`类型起作用，`bashrc`只会被`bash shell`调用。
-
-### `bash_profile`文件
-
-`bash_profile`只有单一用户有效，文件存储位于`~/.bash_profile`，该文件是一个用户级的设置，可以理解为某一个用户的`profile`目录下。这个文件同样也可以用于配置环境变量和启动程序，但只针对单个用户有效。
-
-和`profile`文件类似，`bash_profile`也会在用户登录（`login`）时生效，也可以用于设置环境变理。但与`profile`不同，`bash_profile`只会对当前用户生效。
 
 
